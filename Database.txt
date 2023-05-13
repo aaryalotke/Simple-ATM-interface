@@ -1,0 +1,47 @@
+create table Customer(
+	CustomerID int primary key,
+    CustomerName varchar(35),
+    CustomerPassword varchar(35)
+);
+create table Account(
+	CustomerID int not null,
+    AccountType varchar(10),
+    BalanceAmount numeric
+);
+---------------------------------------------------------------------------------------------
+alter table Account add constraint fk foreign key(CustomerID) references customer(CustomerID);
+----------------------------------------------------------------------------------------------
+INSERTING INTO CUSTOMER AND ACCOUNT TABLE:
+
+insert into Customer values(1,'Khushboo','2211');
+insert into Account values (1,'Saving',57809);
+
+insert into Customer values(2,'Aarya','2769');
+insert into Account values(2,'Saving',0);
+
+insert into Customer values(3,'Bhargav','5689');
+insert into Account values(3,'Saving',5000);
+
+insert into Customer values(4,'Harsh','8924');
+insert into Account values(4,'FD',9000);
+
+insert into Customer values(5,'Shreya','2789');
+insert into Account values(5,'Saving',1000);
+
+insert into Customer values(6,'Shreya','2989');
+insert into Account values(6,'RD',10000);
+
+insert into Customer values(7,'Radhika','2467');
+insert into Account values(7,'RD',10007);
+
+insert into Customer values(8,'Rohit','2999');
+insert into Account values(8,'Saving',1000);
+
+insert into Customer values(9,'Harsha','8999');
+insert into Account values(9,'Saving',1000);
+
+insert into Customer values(10,'Srihari','2990');
+insert into Account values(10,'Saving',7809);
+
+select * from Account
+select * from Customer
