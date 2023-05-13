@@ -1,25 +1,24 @@
 create table Customer(
-	CustomerID int primary key,
+    CustomerID int primary key,
     CustomerName varchar(35),
     CustomerPassword varchar(35)
 );
 create table Account(
-	CustomerID int not null,
+    CustomerID int not null,
     AccountType varchar(10),
-    BalanceAmount numeric
+    BalanceAmount numeric,
+    foreign key(CustomerID) references customer(CustomerID),
 );
----------------------------------------------------------------------------------------------
-alter table Account add constraint fk foreign key(CustomerID) references customer(CustomerID);
-----------------------------------------------------------------------------------------------
+
 INSERTING INTO CUSTOMER AND ACCOUNT TABLE:
 
-insert into Customer values(1,'Khushboo','2211');
+insert into Customer values(1,'Samuel','2211');
 insert into Account values (1,'Saving',57809);
 
-insert into Customer values(2,'Aarya','2769');
+insert into Customer values(2,'Aniket','2769');
 insert into Account values(2,'Saving',0);
 
-insert into Customer values(3,'Bhargav','5689');
+insert into Customer values(3,'Sanika','5689');
 insert into Account values(3,'Saving',5000);
 
 insert into Customer values(4,'Harsh','8924');
